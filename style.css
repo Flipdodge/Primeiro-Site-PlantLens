@@ -1,9 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+main {
+    padding-top: 60px;
+}
+
 body {
     background-color: #1b1818;
     color: #f0f0f0;
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 header {
@@ -12,6 +26,8 @@ header {
     width: 100%;
     z-index: 1000;
     transition: transform 0.3s ease;
+    top: 0;
+    left: 0;
 }
 
 header ul {
@@ -65,7 +81,7 @@ header a:hover { color: #4CAF50; }
     background-position: center;
 }
 
-.conteudo-centralizado { padding-top: 100px; }
+.conteudo-centralizado { padding-top: 40px; }
 
 h2 {
     font-size: 3em;
@@ -1010,9 +1026,107 @@ footer {
     .demo-instructions {
         max-width: 600px;
     }
+
+    .beneficios-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .app-showcase {
+        flex-direction: column;
+        gap: 30px;
+    }
 }
 
 @media (max-width: 768px) {
+    /* Header Mobile */
+    header ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px 5px;
+    }
+
+    header h1 {
+        font-size: 1.3em;
+    }
+
+    header a {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+
+    /* Hero Section */
+    h2 {
+        font-size: 2em;
+    }
+
+    .conteudo-centralizado {
+        padding-top: 60px;
+    }
+
+    .dobra {
+        min-height: 400px;
+        padding: 60px 15px;
+    }
+
+    /* Layout Dividido */
+    .layout-dividido {
+        flex-direction: column;
+    }
+
+    .coluna-imagem, .coluna-texto {
+        padding: 30px 20px;
+    }
+
+    #sobre-imagem {
+        min-height: 300px;
+    }
+
+    /* Benefícios Grid */
+    .beneficios-grid {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+
+    .beneficio-card {
+        padding: 25px 20px;
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* App Showcase */
+    .app-showcase {
+        flex-direction: column;
+        padding: 20px 15px;
+    }
+
+    .screenshot-container {
+        max-width: 280px;
+    }
+
+    .screenshot-image {
+        width: 240px;
+        height: 430px;
+    }
+
+    /* Logos */
+    .logos {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .logos img {
+        max-width: 200px;
+    }
+
+    /* Demo Phone */
     .phone-mockup {
         transform: scale(0.85);
     }
@@ -1023,5 +1137,189 @@ footer {
     
     .instruction-card {
         padding: 15px;
+    }
+
+    /* Container Cards */
+    .container-cards {
+        width: 95%;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    /* Feature Items */
+    .feature-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .feature-icon {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Header Super Mobile */
+    header ul {
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 8px 5px;
+        gap: 5px;
+        justify-content: flex-start;
+    }
+
+    header ul::-webkit-scrollbar {
+        display: none;
+    }
+
+    header li {
+        margin: 0;
+        flex-shrink: 0;
+    }
+
+    header li:first-child {
+        margin-right: auto;
+    }
+
+    header h1 {
+        font-size: 1.1em;
+        margin-bottom: 0;
+        white-space: nowrap;
+    }
+
+    header a {
+        padding: 6px 12px;
+        font-size: 0.8em;
+        white-space: nowrap;
+    }
+
+    /* Hero */
+    h2 {
+        font-size: 1.6em;
+    }
+
+    /* Conteúdo Centralizado */
+    .conteudo-centralizado {
+        padding-top: 20px;
+    }
+
+    .conteudo-centralizado p {
+        font-size: 0.95em;
+        padding: 0 15px;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    /* Coluna Texto */
+    .coluna-texto {
+        padding: 25px 20px;
+    }
+
+    .coluna-texto h2 {
+        font-size: 1.8em;
+    }
+
+    .coluna-texto p {
+        font-size: 0.95em;
+        line-height: 1.6;
+    }
+
+    /* Dobra */
+    .dobra {
+        min-height: 350px;
+        padding: 50px 10px;
+    }
+
+    /* Benefícios */
+    .beneficio-card {
+        padding: 20px 15px;
+    }
+
+    .beneficio-icon {
+        font-size: 2.5em;
+    }
+
+    .beneficio-card h3 {
+        font-size: 1.1em;
+    }
+
+    /* Stats */
+    .stat-card {
+        padding: 20px 10px;
+    }
+
+    .stat-number {
+        font-size: 2em;
+    }
+
+    .stat-label {
+        font-size: 0.85em;
+    }
+
+    /* Phone Mockup */
+    .phone-mockup {
+        transform: scale(0.7);
+        width: 280px;
+        height: 560px;
+    }
+
+    .screenshot-container {
+        max-width: 220px;
+    }
+
+    .screenshot-image {
+        width: 200px;
+        height: 360px;
+    }
+
+    /* Demo Container */
+    .demo-container {
+        padding: 20px 10px;
+        gap: 30px;
+    }
+
+    .demo-subtitle {
+        font-size: 1em;
+        margin-bottom: 30px;
+    }
+
+    /* Instruction Cards */
+    .instruction-card {
+        padding: 12px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .instruction-icon {
+        font-size: 2em;
+        min-width: auto;
+    }
+
+    /* Quick Actions */
+    .quick-actions {
+        grid-template-columns: 1fr;
+    }
+
+    /* Stats Mini */
+    .stats-mini {
+        grid-template-columns: 1fr;
+    }
+
+    /* Next Care */
+    .next-care {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer */
+    footer {
+        padding: 30px 15px;
+        font-size: 0.9em;
     }
 }
